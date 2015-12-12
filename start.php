@@ -1,7 +1,8 @@
 <?php
 include 'ConnectDB.php';
 foreach ( $_POST as $key => $value ) { $$key = $value; }
-$title = "Course Comparator";
+if(!isset($title))
+	$title = "Course Comparator";
 ?>
 
 

@@ -1,5 +1,7 @@
-<?php include 'start.php';
+<?php
     $title = $branchID;
+    include 'start.php';
+
 ?>
 
 <div class="jumbotron text-center">

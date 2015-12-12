@@ -1,9 +1,10 @@
-<?php include 'start.php';
- 	  session_start();
-      $title = "Login - Course Comparator";
-      if(isset($_SESSION['password'])){
-          header("location: portal.php");
-      }
+<?php
+    $title = "Login - Course Comparator";
+    include 'start.php';
+      session_start();
+    if(isset($_SESSION['password'])){
+      header("location: portal.php");
+    }
 ?>
 
 <div class="jumbotron text-center">
