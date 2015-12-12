@@ -16,12 +16,33 @@
 		<input type="password" class="form-control" id="password">
 	</div>
 
-	<button type="submit" class="btn btn-default">Submit</button>
+	<button type="submit" onsubmit="" class="btn btn-default">Submit</button>
 </form>
 
 <br><br><br>
 <br><br><br>
 <br><br><br>
 <br><br><br>
+
+<p id = "error" style.color="red"></p>
+
+<script type="text/javascript">
+
+	function checkLogin(){
+		var user_name = $("#username").value();
+		var password = $("#pass").value();
+
+		$.post("checkuser.php",{username : user_name,password : pass},function(data,status){
+			if(data == "fine")
+				return true;
+			else{
+				$("#error").html(data);
+			}
+		});
+
+	}
+
+
+</script>
 
 <?php include 'end.php' ?>
