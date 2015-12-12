@@ -5,18 +5,19 @@
 </div>
 
 <?php
-    $sql="SELECT institute FROM Users WHERE username='{$username}';";
+    $sql="SELECT institute FROM Users WHERE username='{$user_username}';";
     if ($result = $conn->query($sql)){
       while($row = $result->fetch_assoc()){
-            $user_institute = {$row['institute']};
+            echo "<!--{$row['institute']}-->";
+            $user_institute = "{$row['institute']}";
         }
     }
-    $sql="SELECT DISTINCT Course_Name FROM Courses WHERE institite='{$user_institute}';";
+    $sql2="SELECT DISTINCT Course_Name,Branch,Course_Details FROM Courses WHERE institute='{$user_institute}';";
 
-    if ($result = $conn->query($sql)) {
+    if ($result = $conn->query($sql2)) {
       while($row = $result->fetch_assoc())
         {
-            echo "{$row['Course_Name']} - {$Branch}<br>{$row['Course_Details']}";
+            echo "{$row['Course_Name']} - {$row['Branch']}<br>{$row['Course_Details']}<br><br>";
         }
     } else {
       echo 'No Courses';
