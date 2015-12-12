@@ -5,7 +5,8 @@
 </div>
 
 <?php
-    $sql="SELECT institute FROM Users WHERE username='{$user_username}';";
+    session_start();
+    $sql="SELECT institute FROM Users WHERE username='{$_SESSION['username']}';";
     if ($result = $conn->query($sql)){
       while($row = $result->fetch_assoc()){
             echo "<!--{$row['institute']}-->";
