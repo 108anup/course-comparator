@@ -3,8 +3,8 @@
 <div class="jumbotron text-center">
   <h1><a id ="heading" href="index.php">Course Comparator</a></h1><br><br>
 
-  <div class="row">   
-		
+  <div class="row">
+
 		<div class="col-sm-2 col-sm-offset-2">
             <label class="control-label top-buffer">Select Course</label>
         </div>
@@ -12,10 +12,10 @@
 	    <div class="col-sm-4">
 
 	    	<select id="Course_Name" class="form-control" name="Course_Name">
-		    	<?php 
+		    	<?php
 
 			        $sql="SELECT DISTINCT Course_Name FROM Courses WHERE branchID='{$branchID}';";
-			   
+
 			   		if ($result = $conn->query($sql)) {
 			   			while($row = $result->fetch_assoc())
 				        {
@@ -29,7 +29,7 @@
 	    	</select>
 
 	    </div>
-	    
+
     	<div class="col-sm-2">
     		<button class="btn btn-danger col-sm-4" id="enterbtn">Enter</button>
 		</div>
@@ -39,7 +39,7 @@
 </div>
 
 <div id="final">
-	
+
 </div>
 
 <script type="text/javascript">
