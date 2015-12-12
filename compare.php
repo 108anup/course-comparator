@@ -1,4 +1,6 @@
-<?php include 'start.php';?>
+<?php include 'start.php';
+    $title = $branchID;
+?>
 
 <div class="jumbotron text-center">
   <h1><a id ="heading" href="index.php">Course Comparator</a></h1><br><br>

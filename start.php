@@ -1,6 +1,8 @@
 <?php
 include 'ConnectDB.php';
-foreach ( $_POST as $key => $value ) { $$key = $value; } ?>
+foreach ( $_POST as $key => $value ) { $$key = $value; }
+$title = "Course Comparator";
+?>
 
 
 <!DOCTYPE html>
@@ -16,6 +18,6 @@ foreach ( $_POST as $key => $value ) { $$key = $value; } ?>
 
 
 
-	<title>Course Comparator</title>
+	<title><?php echo $title; ?></title>
 </head>
 <body id="myPage" data-spy ="scroll">
