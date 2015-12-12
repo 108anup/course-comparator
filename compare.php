@@ -1,5 +1,5 @@
 <?php
-    $title = $branchID;
+    $title = $_POST['branchID'];
     include 'start.php';
 
 ?>
