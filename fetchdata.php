@@ -1,8 +1,8 @@
-<?php 
+<?php
 include 'ConnectDB.php';
 foreach ( $_POST as $key => $value ) { $$key = $value; } ?>
 
-<?php 
+<?php
 
   $sql="SELECT * FROM Courses WHERE Course_Name='{$Course_Name}';";
 
