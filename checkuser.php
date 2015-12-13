@@ -9,6 +9,7 @@
     }
     else{
         $sql = "SELECT username, password FROM Users WHERE username = '{$user_username}';";
+        $password_hash = md5($user_password);
 
         if($result = $conn->query($sql)) {
             if(!$result->num_rows){
@@ -17,8 +18,8 @@
             else
                 while($row = $result->fetch_assoc())
                 {
-                    if("{$row['password']}"==$user_password){
-                        $_SESSION['password'] = $user_password;
+                    if("{$row['password']}"==$password_hash){
+                        $_SESSION['password'] = $password_hash;
                         header("location: portal.php");
                     }
                     else {
