@@ -2,8 +2,15 @@
     foreach ( $_POST as $key => $value ) { $$key = $value; }
     include 'ConnectDB.php';
     session_start();
+
+    //Prevent SQL Injection
+    $user_username=$conn->real_escape_string($user_username);
+    $user_password=$conn->real_escape_string($user_password);
+
     $_SESSION['username']=$user_username;
     unset($_SESSION['password']);
+
+    //Validate User Credentials
     if($user_username==""||$user_password==""){
         header("location: login.php?errMsg=".urlencode("Please Fill All the Required Fields!"));
     }
